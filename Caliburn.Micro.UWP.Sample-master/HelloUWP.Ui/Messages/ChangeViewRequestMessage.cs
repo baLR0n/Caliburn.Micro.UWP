@@ -24,6 +24,9 @@
     public enum Views
     {
         MainView,
-        TabView
+        TabView, 
+        ListView,
+        FormView,
+        CarouselView
     }
 }

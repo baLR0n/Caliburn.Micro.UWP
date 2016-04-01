@@ -150,7 +150,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloUWP.Ui\Caliburn.Micro.HelloUWP.Ui.csproj">
       <Project>{62F833BA-021B-4E29-BA82-004E296E003F}</Project>

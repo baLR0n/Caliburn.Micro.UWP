@@ -15,7 +15,7 @@
         <SplitView x:Name="NavigationView" DisplayMode="Overlay" OpenPaneLength="140">
             <SplitView.Pane>
                 <StackPanel Background="{ThemeResource AccentBrush}">
-                    <Button x:Name="ShowMainView" Content="MainView" Margin="24" />
+                    <Button x:Name="ShowMainView" Content="MainView" Margin="24" Click="OnMenuButtonClick"/>
                 </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
@@ -23,7 +23,7 @@
                     <Frame cm:Message.Attach="[Event Loaded] = [SetupNavigationService($source)]" DataContext="{x:Null}" />
                     <Button Click="OpenNavigationView" Content="&#xE700;" FontFamily="{ThemeResource SymbolThemeFontFamily}" VerticalAlignment="Top" Margin="24" />
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="24">
-                        <Button x:Name="LanguageGerman">
+                        <Button x:Name="LanguageGerman" Margin="0, 0, 20, 0">
                             <Button.Content>
                                 Deutsch
                             </Button.Content>

@@ -69,7 +69,9 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
             this.navigationService = this.container.RegisterNavigationService(frame);
 
             if (this.resume)
+            {
                 this.navigationService.ResumeState();
+            }
         }
 
         /// <summary>

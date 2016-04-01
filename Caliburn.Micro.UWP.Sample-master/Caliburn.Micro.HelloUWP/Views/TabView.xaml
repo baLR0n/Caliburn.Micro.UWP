@@ -50,7 +50,6 @@
                         <Run>Targeting devices with larger displays, static headers keep a fixed position in the header area, regardless of which item is currently selected.</Run><LineBreak/>
                         <Run>Static headers are automatically enabled when the combined width of your PivotItem.Header elements fits within the width available to the Pivot control</Run><LineBreak/>
                     </TextBlock>
-
                 </StackPanel>
             </PivotItem>
         </Pivot>

@@ -31,5 +31,29 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
         {
             this.eventAggregator.PublishOnUIThread(new ChangeViewRequestMessage(Messages.Views.TabView));
         }
+
+        /// <summary>
+        /// Shows the ListView.
+        /// </summary>
+        public void ShowListView()
+        {
+            this.eventAggregator.PublishOnUIThread(new ChangeViewRequestMessage(Messages.Views.ListView));
+        }
+
+        /// <summary>
+        /// Shows the form view.
+        /// </summary>
+        public void ShowFormView()
+        {
+            this.eventAggregator.PublishOnUIThread(new ChangeViewRequestMessage(Messages.Views.FormView));
+        }
+
+        /// <summary>
+        /// Shows the carousel view.
+        /// </summary>
+        public void ShowCarouselView()
+        {
+            this.eventAggregator.PublishOnUIThread(new ChangeViewRequestMessage(Messages.Views.CarouselView));
+        }
     }
 }
