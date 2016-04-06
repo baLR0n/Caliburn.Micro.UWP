@@ -14,7 +14,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <SplitView x:Name="NavigationView" DisplayMode="Overlay" OpenPaneLength="140">
             <SplitView.Pane>
-                <StackPanel Background="{ThemeResource AccentBrush}">
+                <StackPanel Background="{Binding SecondaryColor, UpdateSourceTrigger=PropertyChanged, FallbackValue={ThemeResource AccentBrush}}">
                     <Button x:Name="ShowMainView" Content="MainView" Margin="24" Click="OnMenuButtonClick"/>
                 </StackPanel>
             </SplitView.Pane>

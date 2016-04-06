@@ -107,6 +107,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Messages\ChangeThemeRequestMessage.cs" />
     <Compile Include="Messages\ChangeViewRequestMessage.cs" />
     <Compile Include="Messages\ResumeStateMessage.cs" />
     <Compile Include="Messages\SuspendStateMessage.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\TabViewModel.cs" />
+    <Compile Include="ViewModels\ThemableViewModel.cs" />
     <EmbeddedResource Include="Properties\HelloUWP.Ui.rd.xml" />
   </ItemGroup>
   <ItemGroup>

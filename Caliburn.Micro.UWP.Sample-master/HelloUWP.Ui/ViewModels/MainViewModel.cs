@@ -1,4 +1,6 @@
-﻿using Caliburn.Micro.HelloUWP.Ui.Messages;
+﻿using Windows.UI;
+using Windows.UI.Xaml.Media;
+using Caliburn.Micro.HelloUWP.Ui.Messages;
 
 using PropertyChanged;
 
@@ -8,7 +10,7 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
     /// Class MainViewModel.
     /// </summary>
     [ImplementPropertyChanged]
-    public class MainViewModel : Screen
+    public class MainViewModel : ThemableViewModel
     {
         /// <summary>
         /// The event aggregator
@@ -22,6 +24,7 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
         public MainViewModel(IEventAggregator eventAggregator)
         {
             this.eventAggregator = eventAggregator;
+            this.eventAggregator.Subscribe(this);
         }
 
         /// <summary>
@@ -54,6 +57,20 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
         public void ShowCarouselView()
         {
             this.eventAggregator.PublishOnUIThread(new ChangeViewRequestMessage(Messages.Views.CarouselView));
+        }
+
+        /// <summary>
+        /// Blues the theme.
+        /// </summary>
+        public void BlueTheme()
+        {
+            this.eventAggregator.PublishOnUIThread(new ChangeThemeRequestMessage(new ThemePalette()
+            {
+                PrimaryColor = new SolidColorBrush(Colors.Blue),
+                SecondaryColor = new SolidColorBrush(Colors.LightBlue),
+                AccentColor = new SolidColorBrush(Colors.Pink),
+                BackupAccentColor = new SolidColorBrush(Colors.Red),
+            }));
         }
     }
 }

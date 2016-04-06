@@ -5,7 +5,7 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
     /// <summary>
     /// Class TabViewModel.
     /// </summary>
-    public class TabViewModel : Screen
+    public class TabViewModel : ThemableViewModel
     {
         /// <summary>
         /// The event aggregator
@@ -19,6 +19,7 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
         public TabViewModel(IEventAggregator eventAggregator)
         {
             this.eventAggregator = eventAggregator;
+            this.eventAggregator.Subscribe(this);
         }
     }
 }

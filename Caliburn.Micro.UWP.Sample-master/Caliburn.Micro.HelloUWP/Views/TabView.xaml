@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{Binding PrimaryColor, UpdateSourceTrigger=PropertyChanged, FallbackValue={ThemeResource ApplicationPageBackgroundThemeBrush}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -16,9 +16,8 @@
         
         <!--TabView-->
         <Pivot x:Name="MainPivot" Grid.Row="1">
-
             <Pivot.LeftHeader>
-                <AppBarButton x:Name="PivotBack" Icon="Back" Click="PivotBackButtonClick" />
+                <AppBarButton x:Name="PivotBack" Icon="Back" Click="PivotBackButtonClick"/>
             </Pivot.LeftHeader>
             
             <PivotItem Header="Mouse Support">

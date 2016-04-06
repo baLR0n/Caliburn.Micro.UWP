@@ -2,7 +2,6 @@
 
 using Windows.Globalization;
 using Windows.UI.Xaml.Controls;
-
 using Caliburn.Micro.HelloUWP.Ui.Messages;
 
 using PropertyChanged;
@@ -10,7 +9,7 @@ using PropertyChanged;
 namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
 {
     [ImplementPropertyChanged]
-    public class ShellViewModel : Screen, IHandle<ResumeStateMessage>, IHandle<SuspendStateMessage>, IHandle<ChangeViewRequestMessage>, IHandle<SwitchLanguageMessage>
+    public class ShellViewModel : ThemableViewModel, IHandle<ResumeStateMessage>, IHandle<SuspendStateMessage>, IHandle<ChangeViewRequestMessage>, IHandle<SwitchLanguageMessage>
     {
         /// <summary>
         /// The container
@@ -41,6 +40,9 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
         {
             this.container = container;
             this.eventAggregator = eventAggregator;
+
+            // Thats the way to overwrite theme resources.
+            //Application.Current.Resources["ApplicationPageBackgroundThemeBrush"] = new SolidColorBrush(Colors.Red);
         }
 
         /// <summary>

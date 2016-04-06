@@ -5,7 +5,7 @@ using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Globalization;
-
+using Windows.UI.Xaml.Controls;
 using Caliburn.Micro.HelloUWP.Ui.Messages;
 using Caliburn.Micro.HelloUWP.Ui.ViewModels;
 
@@ -44,9 +44,9 @@ namespace Caliburn.Micro.HelloUWP
 
             // Register your view models here.
             this.container
-                .PerRequest<ShellViewModel>()
-                .PerRequest<MainViewModel>()
-                .PerRequest<TabViewModel>();
+                .Singleton<ShellViewModel>()
+                .Singleton<MainViewModel>()
+                .Singleton<TabViewModel>();
 
             this.eventAggregator = this.container.GetInstance<IEventAggregator>();
         }
@@ -103,6 +103,13 @@ namespace Caliburn.Micro.HelloUWP
             };
 
             return assemblies;
+        }
+
+        public static Frame RootFrame;
+
+        protected override void PrepareViewFirst(Frame rootFrame)
+        {
+            RootFrame = rootFrame;
         }
 
         /// <summary>
