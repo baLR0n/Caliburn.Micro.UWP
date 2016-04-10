@@ -1,10 +1,18 @@
 ﻿using Windows.UI.Xaml.Media;
 using Caliburn.Micro.HelloUWP.Ui.Messages;
 
-namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
+namespace Caliburn.Micro.HelloUWP.Ui.Theming
 {
     public class ThemableViewModel : Screen, IHandle<ChangeThemeRequestMessage>
     {
+        public ThemableViewModel()
+        {
+            this.PrimaryColor = new SolidColorBrush(ThemeManager.PrimaryColor);
+            this.SecondaryColor = new SolidColorBrush(ThemeManager.SecondaryColor);
+            this.AccentColor = new SolidColorBrush(ThemeManager.AccentColor);
+            this.BackupAccentColor = new SolidColorBrush(ThemeManager.BackupAccentColor);
+        }
+
         /// <summary>
         /// Gets or sets the color of the primary.
         /// </summary>
@@ -43,6 +51,11 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
         /// <param name="message">The message.</param>
         public void Handle(ChangeThemeRequestMessage message)
         {
+            ThemeManager.SetPrimaryBackgroundColor(message.Palette.PrimaryColor.Color);
+            ThemeManager.SetSecondaryColor(message.Palette.SecondaryColor.Color);
+            ThemeManager.SetAccentColor(message.Palette.AccentColor.Color);
+            ThemeManager.SetBackupAccentColor(message.Palette.BackupAccentColor.Color);
+
             this.PrimaryColor = message.Palette.PrimaryColor;
             this.SecondaryColor = message.Palette.SecondaryColor;
             this.AccentColor = message.Palette.AccentColor;

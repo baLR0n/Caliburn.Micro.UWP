@@ -2,8 +2,9 @@
 
 using Windows.Globalization;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Caliburn.Micro.HelloUWP.Ui.Messages;
-
+using Caliburn.Micro.HelloUWP.Ui.Theming;
 using PropertyChanged;
 
 namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
@@ -40,6 +41,14 @@ namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
         {
             this.container = container;
             this.eventAggregator = eventAggregator;
+
+            // Initialize the theme manager. If no colors are saved, create settings with default theme colors.
+            ThemeManager.Initialize();
+
+            this.PrimaryColor = new SolidColorBrush(ThemeManager.PrimaryColor);
+            this.SecondaryColor = new SolidColorBrush(ThemeManager.SecondaryColor);
+            this.AccentColor = new SolidColorBrush(ThemeManager.AccentColor);
+            this.BackupAccentColor = new SolidColorBrush(ThemeManager.BackupAccentColor);
 
             // Thats the way to overwrite theme resources.
             //Application.Current.Resources["ApplicationPageBackgroundThemeBrush"] = new SolidColorBrush(Colors.Red);

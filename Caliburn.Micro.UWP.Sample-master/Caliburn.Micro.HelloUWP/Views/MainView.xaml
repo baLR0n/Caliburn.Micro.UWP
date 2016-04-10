@@ -63,11 +63,32 @@
                 Content="Show me a carousel"
                 Style="{StaticResource TileButtonStyle}"/>
 
-        <Button x:Name="BlueTheme"
-                x:Uid="BlueThemeButton"
-                Grid.Row="2"
-                Grid.Column="0"
-                Content="Blue Theme"
-                Style="{StaticResource TileButtonStyle}"></Button>
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
+            <Button x:Name="BlueTheme"
+                    x:Uid="BlueThemeButton"
+                    Content="Blue Theme"
+                    Style="{StaticResource TileButtonStyle}"
+                    Height="30"></Button>
+            <Button x:Name="RandomTheme"
+                    x:Uid="RandomThemeButton"
+                    Content="Random Theme"
+                    Style="{StaticResource TileButtonStyle}"
+                    Height="30"></Button>
+            <Button x:Name="DefaultTheme"
+                    x:Uid="DefaultThemeButton"
+                    Content="Default Theme"
+                    Style="{StaticResource TileButtonStyle}"
+                    Height="30"></Button>
+        </StackPanel>
+        
+        <!--ToDo: Customize Theme controls-->
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+        
+        </Grid>
     </Grid>
 </Page>

@@ -7,14 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     
-    <Page.Resources>
-        <SolidColorBrush x:Key="AccentBrush" Color="#FF34495E" />
-    </Page.Resources>
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <SplitView x:Name="NavigationView" DisplayMode="Overlay" OpenPaneLength="140">
             <SplitView.Pane>
-                <StackPanel Background="{Binding SecondaryColor, UpdateSourceTrigger=PropertyChanged, FallbackValue={ThemeResource AccentBrush}}">
+                <StackPanel Background="{Binding SecondaryColor, UpdateSourceTrigger=PropertyChanged}">
                     <Button x:Name="ShowMainView" Content="MainView" Margin="24" Click="OnMenuButtonClick"/>
                 </StackPanel>
             </SplitView.Pane>

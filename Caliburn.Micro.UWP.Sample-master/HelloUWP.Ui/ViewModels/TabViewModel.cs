@@ -1,4 +1,5 @@
 ﻿using Windows.UI.Xaml.Controls;
+using Caliburn.Micro.HelloUWP.Ui.Theming;
 
 namespace Caliburn.Micro.HelloUWP.Ui.ViewModels
 {
